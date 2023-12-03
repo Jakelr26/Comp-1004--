@@ -1,30 +1,81 @@
-.header {
-    color: white;
-    background-color:lightskyblue;
-    border-color: lightskyblue;
-    border-style: solid;
-    border-bottom-width: 8px;
+/* Main Page Formatting */
+    .header {
+        color: white;
+        background-color:lightskyblue;
+        border-color: lightskyblue;
+        border-style: solid;
+        border-bottom-width: 8px;
+    }
+    /* Header Sub Formatting */
+                h4.HeaderFormatMain{
+                    color:aliceblue;
+                    font-weight: bold; 
+                }
+                h4.AccountLogoText{
+                    color:aliceblue;
+                    font-weight: bold; 
+                    text-align: right;
+                }
+    .sidenav{
+        padding-top: 20px;
+        background-color: rgba(135, 206, 250, 0.363);
+        height: 100%;    
+    }
+
+    .row.content {
+        height: 880px;}
+
+    footer{
+        background-color: rgb(135, 206, 250);
+    }
+
+/* Calendar formatting */
+    * {
+        box-sizing: border-box;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    .month {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+        background-color: rgb(135, 206, 250);
+    }
     
-}
+    .month ul {
+        margin: 0;
+        padding: 0;
+      }
+      
+    .month ul li {
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    }
 
-h4.HeaderFormatMain{
-    color:aliceblue;
-    font-weight:bold ; 
-}
-h4.AccountLogoText{
-    color:aliceblue;
-    font-weight:bold ; 
-    text-align: right;
-}
-.sidenav{
-    padding-top: 20px;
-    background-color: rgba(135, 206, 250, 0.363);
-    height: 100%;    
-}
+    .weekdays{
+        padding: 5px;
+        background-color: rgba(135, 206, 250, 0.363);
 
-.row.content {
-    height: 880px;}
+    }
+    
+    .weekdays li{
+        display: inline-block;
+        width: 13.6%;
+        text-align: center;
+    }
 
-footer{
-    background-color: rgb(135, 206, 250);
-}
+    .days {
+        padding: 10px 0;
+    }
+
+    .days li {
+        display: inline-block;
+        width: 13.6%;
+        text-align: center;
+        margin-bottom: 5px;
+
+      }
