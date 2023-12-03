@@ -4,8 +4,18 @@
     border-color: lightskyblue;
     border-style: solid;
     border-bottom-width: 8px;
+    
 }
 
+h4.HeaderFormatMain{
+    color:aliceblue;
+    font-weight:bold ; 
+}
+h4.AccountLogoText{
+    color:aliceblue;
+    font-weight:bold ; 
+    text-align: right;
+}
 .sidenav{
     padding-top: 20px;
     background-color: rgba(135, 206, 250, 0.363);
