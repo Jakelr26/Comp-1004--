@@ -17,10 +17,27 @@
                     text-align: right;
                 }
     .sidenav{
-        padding-top: 20px;
         background-color: rgba(135, 206, 250, 0.363);
-        height: 100%;    
+        height: 100%; 
+        padding-top: 5px;   
+        padding-left: 0;
+        color: lightskyblue;
+        margin-left: 0;
     }
+    /* Side Nav Sub Formatting*/
+    
+        p.roundBorder {
+            text-align: left;
+            border-width: 2px;
+            border-color: white;
+            border-style: solid;
+            padding: 5px;
+            border-top-right-radius: 20px ;
+            border-bottom-right-radius: 20px ;
+            border-left-width: 8px;
+            border-left-color: lightskyblue;
+            background-color: white;
+        }
 
     .row.content {
         height: 880px;}
@@ -57,9 +74,9 @@
     }
 
     .weekdays{
-        padding: 5px;
+        padding: 2px 0;
+        margin: 0;
         background-color: rgba(135, 206, 250, 0.363);
-
     }
     
     .weekdays li{
@@ -70,6 +87,7 @@
 
     .days {
         padding: 10px 0;
+        background-color: rgba(135, 206, 250, 0.199);
     }
 
     .days li {
