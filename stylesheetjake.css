@@ -26,7 +26,7 @@
     }
     /* Side Nav Sub Formatting*/
     
-        p.roundBorder {
+        .roundBorder {
             text-align: left;
             border-width: 2px;
             border-color: white;
@@ -37,6 +37,22 @@
             border-left-width: 8px;
             border-left-color: lightskyblue;
             background-color: white;
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        .roundBorder:hover {
+            background-color: rgba(163, 213, 245, 0.507);
+            color: white;
+        }
+        .roundBorder.active {
+            background-color: rgba(135, 206, 250, 0.486);
+            color: white;
+        }
+
+        .tabContents {
+            display: none;
+            padding: 1px ;
+            border-top: none;
         }
 
     .row.content {
@@ -69,27 +85,28 @@
       
     .month ul li {
     font-size: 20px;
+    font-weight: 600;
+    color:white;
     text-transform: uppercase;
     letter-spacing: 3px;
     }
 
-    .weekdays{
-        font-size: 15px;
-        word-spacing: -6px;
-        padding: 0px 0px;
+    #weekdays {
+        width: 100%;
+        display: flex;
+        color: #247BA0;
         margin: 0;
         background-color: rgba(135, 206, 250, 0.363);
-    }
-    
-    .weekdays li{
-        display: inline-block;        
-        width: 14.28%;
-        text-align: left;        
+      }
+      #weekdays div {
+        width: 100%;
+        padding: 10px;
+        text-align:center;
         border: 2px solid;
         border-color: rgba(135, 206, 250, 0.048);
         border-bottom: 2px solid;
-        border-bottom-color: rgb(135, 206, 250);
-    }
+        border-bottom-color: rgb(135, 206, 250)
+      }
 
     .days{
         padding: 0;
@@ -104,11 +121,8 @@
         text-align: left;
         padding: 5px;
         margin-bottom: 0px;
-        
         border: 2px solid;
-        
         border-color: rgb(135, 206, 250);
-
         word-spacing: normal;
         letter-spacing: normal;
         display: inline-block;
@@ -120,4 +134,5 @@
         padding-bottom: 50px;
         margin-bottom: 5px;
     }
-    
+    /* calendar js formatting*/
+   

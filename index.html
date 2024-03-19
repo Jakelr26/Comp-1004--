@@ -19,8 +19,8 @@
     <meta name="author" content="Jake Lear">
     <meta name="description" content="Procrastination aid website">
     <link rel="shortcut icon" type="image/x-icon" href="Images/Logo.png" >
-    <script.js src = "main.js"></Script>
- 
+    <script src = "main.js"></Script>
+    
 </head>
 
 
@@ -50,23 +50,32 @@
     <div class="container-fluid text-center" >    
         <div class="row content">
           <div class="col-sm-2 sidenav">
-            <p class="roundBorder"><img src="Images/calendarlogo.png" alt="calendar logo" width="auto" height="18"> TimeTable</p>
-            <p class="roundBorder"><img src="Images/Leaderboardlogo.png" alt="leaderborad logo" width="auto" height="18"> Score</p>
-            <p class="roundBorder"><img src="Images/AIMSlogo.png" alt="Aims logo" width="auto" height="18"> Aims</p>
-            <p class="roundBorder"><img src="Images/AIMSlogo.png" alt="Aims logo" width="auto" height="18"> Aims Archive</p>
+            <!--<p class="roundBorder"><img src="Images/calendarlogo.png" alt="calendar logo" width="auto" height="30"> TimeTable</p>
+            <p class="roundBorder"><img src="Images/Leaderboardlogo.png" alt="leaderborad logo" width="auto" height="30"> Score</p>
+            <p class="roundBorder"><img src="Images/AIMSlogo.png" alt="Aims logo" width="auto" height="30"> Aims</p>
+            <p class="roundBorder"><img src="Images/AIMSlogo.png" alt="Aims logo" width="auto" height="30"> Aims Archive</p>
+            -->
+            
+              <button class="TabLink roundBorder" onclick="openTab(event, 'CalendarTab')"><img src="Images/calendarlogo.png" alt="calendar logo" width="auto" height="30"> TimeTable</button>
+              <button class="TabLink roundBorder" onclick="openTab(event, 'ScoreTab')"><img src="Images/Leaderboardlogo.png" alt="leaderborad logo" width="auto" height="30"> Score</button>
+              <button class="TabLink roundBorder" onclick="openTab(event, 'AimsTab')"><img src="Images/AIMSlogo.png" alt="Aims logo" width="auto" height="30"> Aims</button>
+              <button class="TabLink roundBorder" onclick="openTab(event, 'ArchiveTab')"><img src="Images/Archive.png" alt="Aims logo" width="auto" height="30"> Aims Archive</button>
+            
+          </div>
 
+          
 
 
 <!--Middle Block-->          
-          </div>
+          
     <!--Logo + Page Break Line-->
             <div class="col-sm-10 text-left">        
               <img src="Images/SideOnTrackNoLogo.png" class="img-rounded" alt="main welcome logo" width="auto" height="auto">
               <hr>
 
+          <!--Calendar Code-->
+          <div id="CalendarTab" class="tabContents">
 
-
-    <!--Calendar Code-->
             <div class="month">      
               <ul>
                 <li>
@@ -75,65 +84,112 @@
                 </li>
               </ul>
             </div> 
-    
-            <!--<ul class="weekdays">
-                <li>MON</li>
-                <li>TUE</li>
-                <li>WED</li>
-                <li>THU</li>
-                <li>FRI</li>
-                <li>SAT</li>
-                <li>SUN</li>
-             </ul>-->
+            
+            <div id=" container">
+              <div id="headerContainer"></div>
 
-             <ul class="days">
-              <li>1 <p class="taskformat"> To Do Today:</p></li>
-              <li>2 <p class="taskformat"> To Do Today:</p></li>
-              <li>3 <p class="taskformat"> To Do Today:</p></li>
-              <li>4 <p class="taskformat"> To Do Today:</p></li>
-              <li>5 <p class="taskformat"> To Do Today:</p></li>
-              <li>6 <p class="taskformat"> To Do Today:</p></li>
-              <li>7 <p class="taskformat"> To Do Today:</p></li>
-              <li>8 <p class="taskformat"> To Do Today:</p></li>
-              <li>9 <p class="taskformat"> To Do Today:</p></li>
-              <li>10 <p class="taskformat"> To Do Today:</p></li>
-              <li>11 <p class="taskformat"> To Do Today:</p></li>
-              <li>12 <p class="taskformat"> To Do Today:</p></li>
-              <li>13 <p class="taskformat"> To Do Today:</p></li>
-              <li>14 <p class="taskformat"> To Do Today:</p></li>
-              <li>15 <p class="taskformat"> To Do Today:</p></li>
-              <li>16 <p class="taskformat"> To Do Today:</p></li>
-              <li>17 <p class="taskformat"> To Do Today:</p></li>
-              <li>18 <p class="taskformat"> To Do Today:</p></li>
-              <li>19 <p class="taskformat"> To Do Today:</p></li>
-              <li>20 <p class="taskformat"> To Do Today:</p></li>
-              <li>21 <p class="taskformat"> To Do Today:</p></li>
-              <li>22 <p class="taskformat"> To Do Today:</p></li>
-              <li>23 <p class="taskformat"> To Do Today:</p></li>
-              <li>24 <p class="taskformat"> To Do Today:</p></li>
-              <li>25 <p class="taskformat"> To Do Today:</p></li>
-              <li>26 <p class="taskformat"> To Do Today:</p></li>
-              <li>27 <p class="taskformat"> To Do Today:</p></li>
-              <li>28 <p class="taskformat"> To Do Today:</p></li>
-              <li>29 <p class="taskformat"> To Do Today:</p></li>
-              <li>30 <p class="taskformat"> To Do Today:</p></li>
-              <li>31 <p class="taskformat"> To Do Today:</p></li>
-              <li> <p class="taskformat"> To Do Today:</p></li>
-              <li> <p class="taskformat"> To Do Today:</p></li>
-              <li> <p class="taskformat"> To Do Today:</p></li>
-              <li> <p class="taskformat"> To Do Today:</p></li>
+              <div id="weekdays">
+                <div>Sunday</div>
+                <div>Monday</div>
+                <div>Tuesday</div>
+                <div>Wednesday</div>
+                <div>Thursday</div>
+                <div>Firday</div>
+                <div>Saturday</div>
+              </div>
 
-             </ul>
+              <div id="calendar"></div>
+
+
+            </div>
+
+              <ul class="days">
+                <li>01 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p><button id="btnSave">SAVE</button></li>
+                <li>02 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>03 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>04 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>05 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>06 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>07 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>08 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>09 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>10 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>11 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>12 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>13 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>14 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>15 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>16 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>17 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>18 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>19 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>20 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>21 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>22 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>23 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>24 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>25 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>26 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>27 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>28 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>29 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>30 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+                <li>31 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
+          
+
+              </ul>
           </div>
 
+          <!--Score Code-->
+          <div id="ScoreTab" class="tabContents">
+            <h2>Score</h2>
+          </div>
+
+          <!--Aims Code-->
+          <div id="AimsTab" class="tabContents">
+            <h2>Aims</h2>
+          </div>  
+
+          <!--Archive Code-->
+          <div id="ArchiveTab" class="tabContents">
+            <h2>Archive</h2>
+          </div>
 
         </div>
       </div>
-    <script src="script.js"></script>
+    </div>
+
+
+   
 
     <footer class="container-fluid text-center">
         <p>Footer Text</p>
     </footer>
-      
+ 
+    
+
+
+<script>
+
+window.onload = openTab(event, 'CalendarTab');
+
+function openTab(evt, tabName) {
+    var i, tabContents, TabLink; 
+    tabContents = document.getElementsByClassName("tabContents");
+    for (i = 0; i < tabContents.length; i++) {
+        tabContents[i].style.display= "none";
+    }
+    TabLink = document.getElementsByClassName("TabLink");
+    for (i = 0; i < TabLink.length; i++) {
+        TabLink[i].className = TabLink[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+
+</script>
+<script src="./script.js"></script>
+<!--<script src="./storage.js"></script>-->
+<script src="calendarjava.js"></script>
 </body>
 </html>
