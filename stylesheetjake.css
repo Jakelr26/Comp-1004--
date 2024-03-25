@@ -1,3 +1,4 @@
+
 /* Main Page Formatting */
     .header {
         color: white;
@@ -39,6 +40,7 @@
             background-color: white;
             width: 100%;
             margin-bottom: 5px;
+            color: #247BA0;
         }
         .roundBorder:hover {
             background-color: rgba(163, 213, 245, 0.507);
@@ -63,10 +65,7 @@
     }
 
 /* Calendar formatting */
-    * {
-        box-sizing: border-box;
-    }
-
+    
     ul {
         list-style-type: none;
     }
@@ -89,6 +88,16 @@
     color:white;
     text-transform: uppercase;
     letter-spacing: 3px;
+    } 
+    button {
+    width: 75px;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px gray;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: #247BA0;
     }
 
     #weekdays {
@@ -107,32 +116,96 @@
         border-bottom: 2px solid;
         border-bottom-color: rgb(135, 206, 250)
       }
-
-    .days{
-        padding: 0;
+      #calendar {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .day {
+        width: 14.28%;        
+        padding: 10px;
+        height: 100px;
+        cursor: pointer;
+        box-sizing: border-box;
         background-color: rgba(135, 206, 250, 0.199);
-        word-spacing: -3px;
-        letter-spacing: -3px;
-    }
-
-    .days li {
-        display: inline-block;
-        width: 14.28%;
-        text-align: left;
-        padding: 5px;
-        margin-bottom: 0px;
+        word-spacing: 1px;
+        letter-spacing: 1px;
+        box-shadow: 0px 0px 3px #CBD4C2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         border: 2px solid;
         border-color: rgb(135, 206, 250);
-        word-spacing: normal;
-        letter-spacing: normal;
-        display: inline-block;
+        text-align: left;
+
       }
-    .taskformat {
+      .day:hover {
+        background-color: #e8faed;
+      }
+      
+      .day + #currentDay {
+        background-color:#e8f4fa;
+      }
+      .event {
+        font-size: 10px;
+        padding: 3px;
+        background-color: #58bae4;
+        color: white;
+        border-radius: 5px;
+        max-height: 55px;
+        overflow: hidden;
+      }
+      .padding {
+        cursor: default !important;
+        background-color: #FFFCFF !important;
+        box-shadow: none !important;
+        border: 2px solid;
+        border-color: #FFFCFF;
+      }
+
+       .taskformat {
         display: inline-block;
         
         font-size: 10px;
         padding-bottom: 50px;
         margin-bottom: 5px;
     }
+    #newEventModal, #deleteEventModal {
+  display: none;
+  z-index: 20;
+  padding: 25px;
+  background-color: #e8f4fa;
+  box-shadow: 0px 0px 3px black;
+  border-radius: 5px;
+  width: 350px;
+  top: 100px;
+  left: calc(50% - 175px);
+  position: absolute;
+  font-family: sans-serif;
+}
+#saveButton, #closeButton {
+    background-color: #1c809e;  
+    color: white;  
+}
+#cancelButton, #deleteButton {
+    background-color: #d36c6c;
+  }
+  #eventTitleInput {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 3px gray;
+  }
+  #eventTitleInput.error {
+    border: 2px solid red;
+  }
+  #eventText {
+    font-size: 14px;
+  }
+  
     /* calendar js formatting*/
-   

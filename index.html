@@ -19,7 +19,6 @@
     <meta name="author" content="Jake Lear">
     <meta name="description" content="Procrastination aid website">
     <link rel="shortcut icon" type="image/x-icon" href="Images/Logo.png" >
-    <script src = "main.js"></Script>
     
 </head>
 
@@ -71,7 +70,7 @@
     <!--Logo + Page Break Line-->
             <div class="col-sm-10 text-left">        
               <img src="Images/SideOnTrackNoLogo.png" class="img-rounded" alt="main welcome logo" width="auto" height="auto">
-              <hr>
+              
 
           <!--Calendar Code-->
           <div id="CalendarTab" class="tabContents">
@@ -79,8 +78,13 @@
             <div class="month">      
               <ul>
                 <li>
-                  Month<br>
-                  <span style="font-size:18px">Year</span>
+                  <div id="monthDisplay"></div><br>
+                  <span style="font-size:18px"><div id="monthDisplay"></div>
+                    <div>
+                      <button id="backButton">Back</button>
+                      <button id="nextButton">Next</button>
+                    </div>
+            </span>
                 </li>
               </ul>
             </div> 
@@ -94,51 +98,37 @@
                 <div>Tuesday</div>
                 <div>Wednesday</div>
                 <div>Thursday</div>
-                <div>Firday</div>
+                <div>Friday</div>
                 <div>Saturday</div>
               </div>
-
+        
               <div id="calendar"></div>
-
-
+            </div>
+        
+            <div id="newEventModal">
+              <h2>New Event</h2>
+        
+              <input id="eventTitleInput" placeholder="Event Title" />
+        
+              <button id="saveButton">Save</button>
+              <button id="cancelButton">Cancel</button>
+            </div>
+        
+            <div id="deleteEventModal">
+              <h2>Event</h2>
+        
+              <p id="eventText"></p>
+        
+              <button id="deleteButton">Delete</button>
+              <button id="closeButton">Close</button>
             </div>
 
-              <ul class="days">
-                <li>01 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p><button id="btnSave">SAVE</button></li>
-                <li>02 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>03 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>04 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>05 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>06 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>07 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>08 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>09 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>10 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>11 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>12 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>13 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>14 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>15 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>16 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>17 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>18 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>19 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>20 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>21 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>22 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>23 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>24 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>25 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>26 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>27 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>28 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>29 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>30 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-                <li>31 <p class="taskformat"> To Do Today:<input type="text" id="show"/></p></li>
-          
 
-              </ul>
+              <div id="modalBackDrop"></div>
           </div>
+
+
+
 
           <!--Score Code-->
           <div id="ScoreTab" class="tabContents">
@@ -169,27 +159,9 @@
     
 
 
-<script>
 
-window.onload = openTab(event, 'CalendarTab');
-
-function openTab(evt, tabName) {
-    var i, tabContents, TabLink; 
-    tabContents = document.getElementsByClassName("tabContents");
-    for (i = 0; i < tabContents.length; i++) {
-        tabContents[i].style.display= "none";
-    }
-    TabLink = document.getElementsByClassName("TabLink");
-    for (i = 0; i < TabLink.length; i++) {
-        TabLink[i].className = TabLink[i].className.replace(" active", "");
-    }
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
-  }
-
-</script>
-<script src="./script.js"></script>
-<!--<script src="./storage.js"></script>-->
+<script src="tabs.js"></script>
+<script>window.onload = openTab(event, 'CalendarTab');</script>
 <script src="calendarjava.js"></script>
 </body>
 </html>
