@@ -97,7 +97,8 @@
     outline: none;
     padding: 5px;
     border-radius: 5px;
-    color: #247BA0;
+    background-color: #58bae4;
+    color: #ffffff;
     }
 
     #weekdays {
@@ -208,4 +209,8 @@
     font-size: 14px;
   }
   
-    /* calendar js formatting*/
+    /*Score formatting*/
+    .scoreCont{
+      background-color: rgb(135, 206, 250);
+      color: #fff;
+    }

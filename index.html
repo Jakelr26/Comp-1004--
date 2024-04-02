@@ -57,8 +57,8 @@
             
               <button class="TabLink roundBorder" onclick="openTab(event, 'CalendarTab')"><img src="Images/calendarlogo.png" alt="calendar logo" width="auto" height="30"> TimeTable</button>
               <button class="TabLink roundBorder" onclick="openTab(event, 'ScoreTab')"><img src="Images/Leaderboardlogo.png" alt="leaderborad logo" width="auto" height="30"> Score</button>
-              <button class="TabLink roundBorder" onclick="openTab(event, 'AimsTab')"><img src="Images/AIMSlogo.png" alt="Aims logo" width="auto" height="30"> Aims</button>
-              <button class="TabLink roundBorder" onclick="openTab(event, 'ArchiveTab')"><img src="Images/Archive.png" alt="Aims logo" width="auto" height="30"> Aims Archive</button>
+              <button class="TabLink roundBorder" onclick="openTab(event, 'AimsTab')"><img src="Images/AIMSlogo.png" alt="Aims logo" width="auto" height="30"> Long Term Aims</button>
+              <button class="TabLink roundBorder" onclick="openTab(event, 'ArchiveTab')"><img src="Images/Archive.png" alt="Aims logo" width="auto" height="30">   Aims Archive</button>
             
           </div>
 
@@ -137,7 +137,26 @@
 
           <!--Aims Code-->
           <div id="AimsTab" class="tabContents">
-            <h2>Aims</h2>
+            <div class="col-sm-12 scoreCont">
+              <h2>Aims</h2>
+            </div>
+            <div class="col-sm-12 scoreCont">
+              <h4>Store Your Long Term Goals Here</h4>
+            </div>
+            
+            
+            <div>            
+              <p>
+                <label for="Aim">Add A Long Term Aim Here: </label>
+                <input type="text" id="Aim" />
+              </p>
+              <p>
+                <button id="AimSave" class="button">Save</button>
+              </p>
+              <div id="WriteAims"></div>
+            </div>
+
+
           </div>  
 
           <!--Archive Code-->
@@ -161,7 +180,11 @@
 
 
 <script src="tabs.js"></script>
-<script>window.onload = openTab(event, 'CalendarTab');</script>
+<script>window.onload = openTab(event, 'AimsTab');</script>
+
 <script src="calendarjava.js"></script>
+<script src="Aims.js"></script>
+
+
 </body>
 </html>
