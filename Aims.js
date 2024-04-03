@@ -2,9 +2,17 @@ const APP = {
     keybase: 'aims-storage',
     keys: [],
     init(){
+        APP.loadAims();
+        
         document.getElementById('AimSave').addEventListener('click', APP.saveAim);
         
-        APP.loadAims();
+        document.getElementById('Aim').addEventListener('keypress', function(event) {
+            if (event.key === "Enter") {
+              event.preventDefault();
+              APP.saveAim(event); 
+            }
+          });
+
     },
 
     saveAim(ev){
@@ -20,7 +28,9 @@ const APP = {
             }
             AIMS.push(Aim);
             localStorage.setItem(key, JSON.stringify(AIMS));
-
+            document.getElementById('Aim').value = ''
+            APP.loadAims();
+            
         }
     },
     
@@ -30,15 +40,31 @@ const APP = {
          obj = JSON.parse(storage);
 
          let aimsSpace = document.getElementById('WriteAims');
+         WriteAims.innerHTML = '';
          let DocumentFragment = document.createDocumentFragment();
 
+
          obj.forEach((objs) => {
-            let div = document.createElement('div');
-            div.textContent = objs;
-            DocumentFragment.appendChild(div);
+                let li = document.createElement('li');
+                li.textContent = objs;
+                li.className = 'checkList'
+                DocumentFragment.appendChild(li);
+            
+
          }); 
                     
          aimsSpace.appendChild(DocumentFragment);
+
+         let elementList = document.getElementsByClassName('checkList');
+         for (let i = 0; i < elementList.length; i++){
+            let span = document.createElement('span');
+            let TickSymbol = document.createTextNode('\u2714')
+            span.className = 'close';
+            span.appendChild(TickSymbol);
+            elementList[i].appendChild(span);
+
+         } 
+
     },
 };
 

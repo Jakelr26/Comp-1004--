@@ -7,6 +7,10 @@
         border-style: solid;
         border-bottom-width: 8px;
     }
+    .footer{
+      cursor: wait;
+
+    }
     /* Header Sub Formatting */
                 h4.HeaderFormatMain{
                     color:aliceblue;
@@ -19,11 +23,12 @@
                 }
     .sidenav{
         background-color: rgba(135, 206, 250, 0.363);
-        height: 100%; 
+        min-height: 100%;
         padding-top: 5px;   
         padding-left: 0;
         color: lightskyblue;
         margin-left: 0;
+        cursor: ;
     }
     /* Side Nav Sub Formatting*/
     
@@ -209,8 +214,67 @@
     font-size: 14px;
   }
   
-    /*Score formatting*/
-    .scoreCont{
+    /*Aims formatting*/
+    .AimsHead{
       background-color: rgb(135, 206, 250);
       color: #fff;
+      height: 70px;
+   
     }
+    .AimsHead h1{
+      padding: 1px;
+    }
+    .AimsHead h3{
+      padding: 6px;
+    }
+    .AimsSubHead{
+      background-color: rgba(135, 206, 250, 0.614);
+      color: #555;
+      padding: 10px;
+      float: left;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s;
+      border-radius: 0;
+      border-bottom: rgba(135, 206, 250, 0.614);
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+    }
+
+  #WriteAims{
+    background-color: rgba(135, 206, 250, 0.363);
+    font-size: large; 
+    margin-top: -5px;
+    padding: 5px;
+    padding-left: 10px;
+    border-bottom: rgba(135, 206, 250, 0.614);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    height: var(aimheight);
+  }
+  input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+    border-bottom: rgba(135, 206, 250, 0.614);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+  .aimsAddBTN {
+    padding: 10px;
+    background: rgba(135, 206, 250, 0.614);
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: rgba(135, 206, 250, 0.614);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
