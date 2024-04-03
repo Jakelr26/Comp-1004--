@@ -2,7 +2,6 @@ const APP = {
     keybase: 'aims-storage',
     keys: [],
     init(){
-        APP.loadAims();
         
         document.getElementById('AimSave').addEventListener('click', APP.saveAim);
         
@@ -12,6 +11,7 @@ const APP = {
               APP.saveAim(event); 
             }
           });
+          APP.loadAims();
 
     },
 
@@ -45,10 +45,10 @@ const APP = {
 
 
          obj.forEach((objs) => {
-                let li = document.createElement('li');
-                li.textContent = objs;
-                li.className = 'checkList'
-                DocumentFragment.appendChild(li);
+            let li = document.createElement('li');
+            li.textContent = objs;
+            li.className = 'checkList'
+            DocumentFragment.appendChild(li);
             
 
          }); 
