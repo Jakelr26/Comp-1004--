@@ -156,7 +156,7 @@
               <p>
                 <button id="AimSave" class="aimsAddBTN col-sm-2">Save</button>
               </p>
-              <div id="WriteAims" class="col-sm-12"></div>
+              <ul id="WriteAims" class="col-sm-12 WriteAims"></ul>
             </div>
 
 
@@ -164,7 +164,12 @@
 
           <!--Archive Code-->
           <div id="ArchiveTab" class="tabContents">
-            <h2>Archive</h2>
+            <div class="col-sm-4 AimsHead">
+              <h1>Aims Archive</h1>
+            </div>
+            <div class="col-sm-8 AimsHead">
+              <h3>Your completed Long Term Goals are Here</h3>
+            </div>
           </div>
 
         </div>
@@ -183,7 +188,7 @@
 
 
 <script src="tabs.js"></script>
-<script>window.onload = openTab(event, 'AimsTab');</script>
+<script>window.onload = openTab(event, 'ArchiveTab');</script>
 <script src="Aims.js"></script>
 
 <script src="calendarjava.js"></script>

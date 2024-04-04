@@ -43,18 +43,17 @@ const APP = {
          WriteAims.innerHTML = '';
          let DocumentFragment = document.createDocumentFragment();
 
-
+        //for each loop to append the local storage array to document fragment.
          obj.forEach((objs) => {
             let li = document.createElement('li');
             li.textContent = objs;
             li.className = 'checkList'
             DocumentFragment.appendChild(li);
-            
-
          }); 
                     
          aimsSpace.appendChild(DocumentFragment);
-
+         
+         //Tick symbol button stuff
          let elementList = document.getElementsByClassName('checkList');
          for (let i = 0; i < elementList.length; i++){
             let span = document.createElement('span');
@@ -62,9 +61,14 @@ const APP = {
             span.className = 'close';
             span.appendChild(TickSymbol);
             elementList[i].appendChild(span);
-
          } 
-
+         let list = document.querySelector('.WriteAims');
+         list.addEventListener('click', function(ev) {
+           if (ev.target.tagName === 'LI') {
+             ev.target.classList.toggle('checked');
+           }
+         }, false);
+        
     },
 };
 

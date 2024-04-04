@@ -277,3 +277,43 @@ border-bottom: rgba(135, 206, 250, 0.614);
 border-bottom-width: 1px;
 border-bottom-style: solid;
 }
+
+
+.WriteAims li {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 3px;
+  padding-left: 20px;
+  list-style-type:none;
+  /*make the list items unselectable*/
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.WriteAims li:nth-child(even) {
+  background: rgba(135, 206, 250, 0.614);
+}
+
+
+.WriteAims li:hover {
+  background: rgba(135, 206, 250, 0.245) ;
+}
+.WriteAims li.checked{
+  /*background: #a2e1df8b;*/
+  color: #000000;
+  text-decoration:line-through;
+}
+/* Add a "checked" mark when clicked on */
+.WriteAims li.checked::before {
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
