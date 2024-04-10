@@ -14,7 +14,10 @@
 
 <!-- My Style Sheet -->
     <link rel="stylesheet" href="stylesheetjake.css">
-    
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
+
 <head>
     <title>sideONtrack</title>
     <meta charset="utf-8">
@@ -34,13 +37,11 @@
                 <img src="Images/side ontrack main logo.png" class="img-rounded" alt="main corner logo" width="auto" height="40">
             </div>
            
-            <div class="col-sm-6 col-md-8 header"  >
+            <div class="col-sm-7 col-md-9 header"  >
                 <h4 class="HeaderFormatMain"> A site to aid your time management </h4>
             </div> 
             
-            <div class="col-sm-2 col-md-1 header">
-                <h4 class="AccountLogoText"> Account </h4>
-            </div>
+
 
             <div class="col-sm-1 col-md-1 header">
               <img src="Images/AccountLogo.png" alt="Account corner logo" width="auto" height="40">          </div>
@@ -52,12 +53,7 @@
     <div class="container-fluid text-center" >    
         <div class="row content">
           <div class="col-sm-2 sidenav">
-            <!--<p class="roundBorder"><img src="Images/calendarlogo.png" alt="calendar logo" width="auto" height="30"> TimeTable</p>
-            <p class="roundBorder"><img src="Images/Leaderboardlogo.png" alt="leaderborad logo" width="auto" height="30"> Score</p>
-            <p class="roundBorder"><img src="Images/AIMSlogo.png" alt="Aims logo" width="auto" height="30"> Aims</p>
-            <p class="roundBorder"><img src="Images/AIMSlogo.png" alt="Aims logo" width="auto" height="30"> Aims Archive</p>
-            -->
-            
+          
               <button class="TabLink roundBorder" onclick="openTab(event, 'CalendarTab')"><img src="Images/calendarlogo.png" alt="calendar logo" width="auto" height="30"> TimeTable</button>
               <button class="TabLink roundBorder" onclick="openTab(event, 'ScoreTab')"><img src="Images/Leaderboardlogo.png" alt="leaderborad logo" width="auto" height="30"> Score</button>
               <button class="TabLink roundBorder" onclick="openTab(event, 'AimsTab')"><img src="Images/AIMSlogo.png" alt="Aims logo" width="auto" height="30"> Long Term Aims</button>
@@ -77,7 +73,13 @@
 
           <!--Calendar Code-->
           <div id="CalendarTab" class="tabContents">
-
+            <div class="col-sm-4 AimsHead">
+              <h1>Calendar</h1>
+            </div>
+            <div class="col-sm-8 AimsHead">
+              <h3>Add dates of tasks you want to do</h3>
+            </div>
+          
             <div class="month">      
               <ul>
                 <li>
@@ -131,13 +133,6 @@
           </div>
 
 
-
-
-          <!--Score Code-->
-          <div id="ScoreTab" class="tabContents">
-            <h2>Score</h2>
-          </div>
-
           <!--Aims Code-->
           <div id="AimsTab" class="tabContents">
             <div class="col-sm-4 AimsHead">
@@ -150,11 +145,11 @@
             
             <div>            
               <p>
-                <label for="Aim" class="AimsSubHead col-sm-2" >Add A Long Term Aim Here: </label>
-                <input type="text" id="Aim"  class="col-sm-8" placeholder="Type you aims here..."/>
+                <label for="Aim" class=" col-sm-2 AimsSubHead" >Add A Long Term Aim Here: </label>
+                <input type="text" id="Aim"  class="col-sm-8 " placeholder="Type you aims here..."/>
               </p>
               <p>
-                <button id="AimSave" class="aimsAddBTN col-sm-2">Save</button>
+                <button id="AimSave" class="aimsAddBTN col-sm-2 ">Save</button>
               </p>
               <ul id="WriteAims" class="col-sm-12 WriteAims"></ul>
             </div>
@@ -174,15 +169,30 @@
 
           </div>
 
+
+          <!--Score Code-->
+          <div id="ScoreTab" class="tabContents">
+            <div class="col-sm-4 AimsHead">
+              <h1>Score</h1>
+            </div>
+            <div class="col-sm-8 AimsHead">
+              <h3>Here is you score of completed long term aims</h3>
+            </div>
+
+            <p id="score" class="score "></p>
+
+          </div>
+
         </div>
       </div>
     </div>
+    
 
 
    
 
     <footer class="container-fluid text-center footer">
-        <p>Footer Text</p>
+        <p>  </p>
     </footer>
  
     
@@ -190,7 +200,7 @@
 
 
 <script src="tabs.js"></script>
-<script>window.onload = openTab(event, 'ArchiveTab');</script>
+<script>window.onload = openTab(event, 'CalendarTab');</script>
 <script src="Aims.js"></script>
 
 <script src="calendarjava.js"></script>

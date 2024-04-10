@@ -12,7 +12,10 @@ const APP = {
             }
           });
           APP.loadAims();
-          APP.newArchive();
+          APP.loadArcive();
+          APP.scorecounter();
+
+
     },
 
     saveAim(ev){
@@ -74,10 +77,10 @@ const APP = {
          for (let i = 0; i < close.length; i++){
             close[i].onclick = function(){
                 this.parentElement.style.display= 'none'; 
-
-
-                console.log(obj[i]);
-                APP.newArchive(obj[i]); 
+                //console.log(obj[i]);
+                let transfer = i;
+                APP.newArchive(transfer); 
+                APP.deleteOldAim(transfer);
             }
          }
 
@@ -86,10 +89,19 @@ const APP = {
 
     },
 
+    deleteOldAim(deleteItem){
+        let storage = localStorage.getItem('aims-storage');
+        del = JSON.parse(storage);
+        del.splice(deleteItem, 1);
+        localStorage.setItem('aims-storage', JSON.stringify(del));
+        APP.loadAims();
+    },
+
     newArchive(newItem){
 
-        if (newItem){
-            let arc = newItem;
+            let PreArc = localStorage.getItem('aims-storage');
+            JSONarc = JSON.parse(PreArc);
+            let arc = JSONarc[newItem];
 
             let key = 'aims-archive'; 
             let storage = localStorage.getItem(key);
@@ -99,12 +111,11 @@ const APP = {
             }
             ARCHS.push(arc);
             localStorage.setItem(key, JSON.stringify(ARCHS));
-//            document.getElementById('Aim').value = ''
-//            APP.loadAims();
-            
-        }
+            APP.loadArcive();
+    },
 
-
+    loadArcive(){
+        
         let key = 'aims-archive';
         let storage = localStorage.getItem(key);
         obj = JSON.parse(storage);
@@ -123,6 +134,14 @@ const APP = {
                    
         archSpace.appendChild(DocumentFragment);
 
+    },
+    scorecounter(){
+        let key = 'aims-archive';
+        let storage = localStorage.getItem(key);
+        obj = JSON.parse(storage);
+        let scoresize = obj.length;
+        document.getElementById('score').innerHTML = scoresize;
+        console.log(scoresize);
     }
 };
 

@@ -48,25 +48,33 @@ function load() {
     day: 'numeric',
   });
   const paddingDays = weekdays.indexOf(dateString.split(', ')[0]);
+  const monthArr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
   document.getElementById('monthDisplay').innerText = 
-    `${dt.toLocaleDateString('en-us', { month: 'long' })} ${year}`;
+    year;
+
+  document.getElementById('monthDisplay').innerText = 
+    monthArr[month+1] + ' '+ year;
 
   calendar.innerHTML = '';
 
-  for(let i = 1; i <= paddingDays + daysInMonth; i++) {
+  for(let i = 1; i <= paddingDays + daysInMonth + 7 ; i++) {
     const daySquare = document.createElement('div');
     daySquare.classList.add('day');
 
     const dayString = `${month + 1}/${i - paddingDays}/${year}`;
-
-    if (i > paddingDays) {
+    
+    if (i > paddingDays + daysInMonth){
+      daySquare.classList.add('padding');
+      
+    } 
+    else if (i > paddingDays) {
       daySquare.innerText = i - paddingDays;
       const eventForDay = events.find(e => e.date === dayString);
 
       if (i - paddingDays === day && nav === 0) {
         daySquare.id = 'currentDay';
-      }
+      }  
 
       if (eventForDay) {
         const eventDiv = document.createElement('div');
@@ -79,10 +87,13 @@ function load() {
     } else {
       daySquare.classList.add('padding');
     }
-
+    
     calendar.appendChild(daySquare);    
   }
+
+
 }
+
 
 function closeModal() {
   eventTitleInput.classList.remove('error');
