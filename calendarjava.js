@@ -1,9 +1,9 @@
-// Code interpreted From https://www.youtube.com/watch?v=m9OSBJaQTlM
 
 
 let nav = 0;
 let clicked = null;
-let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [];
+let events = localStorage.getItem('events') 
+  ? JSON.parse(localStorage.getItem('events')) : [];
 
 const calendar = document.getElementById('calendar');
 const newEventModal = document.getElementById('newEventModal');
@@ -48,10 +48,9 @@ function load() {
     day: 'numeric',
   });
   const paddingDays = weekdays.indexOf(dateString.split(', ')[0]);
+  
+  
   const monthArr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
-
-  document.getElementById('monthDisplay').innerText = 
-    year;
 
   document.getElementById('monthDisplay').innerText = 
     monthArr[month+1] + ' '+ year;
@@ -63,7 +62,7 @@ function load() {
     daySquare.classList.add('day');
 
     const dayString = `${month + 1}/${i - paddingDays}/${year}`;
-    
+
     if (i > paddingDays + daysInMonth){
       daySquare.classList.add('padding');
       

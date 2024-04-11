@@ -124,6 +124,8 @@ color: #ffffff;
   color: #247BA0;
   margin: 0;
   background-color: rgba(135, 206, 250, 0.363);
+  margin-top: 10px;
+ 
 }
 #weekdays div {
   width: 100%;
@@ -234,8 +236,13 @@ font-size: 14px;
 background-color: rgb(135, 206, 250);
 color: #fff;
 height: 70px;
-
 }
+.calendarHead{
+  background-color: rgb(135, 206, 250);
+  color: #fff;
+  height: auto;
+  }
+
 .AimsHead h1{
 padding: 1px;
 }
@@ -378,4 +385,28 @@ ul.WriteAims{
   font-family: "Audiowide", sans-serif;
   color: lightskyblue;
  
+}
+.calendarsave{
+  background-color: #58bae4;
+  color: white;
+  border: none;
+  font-size: medium;
+}
+.calendarinput{
+  background-color: #58bae4;
+  color: white;
+  border: none;
+  font-size:medium;
+
+}
+.side-by-side{
+  display: inline-flex; 
+	flex-direction: row; 
+	flex-wrap: wrap; 
+  text-align: center;
+  padding-top: 10px;
+}
+#dateChoice{
+  width: 60px;
+  text-align: center;
 }

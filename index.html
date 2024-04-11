@@ -83,13 +83,22 @@
             <div class="month">      
               <ul>
                 <li>
-                  <div id="monthDisplay"></div><br>
+                  <div id="monthDisplay"></div>
                   <span style="font-size:18px"><div id="monthDisplay"></div>
                     <div>
                       <button id="backButton">Back</button>
                       <button id="nextButton">Next</button>
                     </div>
-            </span>
+                  </span>
+                  <div class="AimsHead calendarHead">
+                    <div class="side-by-side">  
+                      <label>Select a day of this month:&nbsp;</label>
+                      <select id="dateChoice" class="calendarinput"></select>
+                      <input type="text" id="calendarinput"  class="col-sm-10  " placeholder="type your plans here and select date above..."/>
+                      <input type="submit" id="calendarSave" class="calendarsave col-sm-2">   
+                    </div>  
+                                         
+                  </div>                 
                 </li>
               </ul>
             </div> 
@@ -97,14 +106,14 @@
             <div id=" container">
               <div id="headerContainer"></div>
 
-              <div id="weekdays">
-                <div>Sunday</div>
+              <div id="weekdays">               
                 <div>Monday</div>
                 <div>Tuesday</div>
                 <div>Wednesday</div>
                 <div>Thursday</div>
                 <div>Friday</div>
                 <div>Saturday</div>
+                <div>Sunday</div>
               </div>
         
               <div id="calendar"></div>
@@ -167,7 +176,7 @@
             </div>
             <ul id="storeAims" class="col-sm-12 storeAims"></ul>
 
-          </div>
+          </div>   
 
 
           <!--Score Code-->
@@ -203,7 +212,8 @@
 <script>window.onload = openTab(event, 'CalendarTab');</script>
 <script src="Aims.js"></script>
 
-<script src="calendarjava.js"></script>
+<!--<script src="calendarjava.js"></script>-->
+<script src="timetable.js"></script>
 
 
 </body>
