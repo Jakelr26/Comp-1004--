@@ -31,7 +31,7 @@ const APP = {
             }
             AIMS.push(Aim);
             localStorage.setItem(key, JSON.stringify(AIMS));
-            document.getElementById('Aim').value = ''
+            document.getElementById('Aim').value = '';
             APP.loadAims();
             
         }
@@ -141,7 +141,6 @@ const APP = {
         obj = JSON.parse(storage);
         let scoresize = obj.length;
         document.getElementById('score').innerHTML = scoresize;
-        console.log(scoresize);
     }
 };
 

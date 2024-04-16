@@ -1,4 +1,4 @@
-
+// code interpreted from https://www.youtube.com/watch?v=m9OSBJaQTlM with a few changes 
 
 let nav = 0;
 let clicked = null;

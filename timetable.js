@@ -43,7 +43,7 @@ const options = {
         const inbetweenDays = weekdays.indexOf(firstDayName[0]);
         if (month > 11){
             month = month -12;
-            //year++
+            year++
         }
         document.getElementById('monthDisplay').innerText = monthArr[month] + ' '+ year;
 
@@ -68,6 +68,14 @@ const options = {
             }
             else if (i > inbetweenDays){
                 daybox.innerText = i - inbetweenDays;
+                
+                const dayString = `${i - inbetweenDays }/${month + 1}/${year}`;
+                console.log(dayString);
+                //planStore.find((element) => element ===)
+
+
+                daybox.addEventListener(click,  () => loadToSpace());
+
             }
             else{
                 daybox.classList.add('padding');
@@ -87,8 +95,31 @@ const options = {
         const wholeDate = new Date(year, month, day);    
         const dateString = wholeDate.toLocaleDateString('en-gb');
         console.log(dateString);
-    }
+        getPlan(dateString);
 
+    }
+    function getPlan(eventDate){
+        let key = 'events';
+        let plan = document.getElementById('calendarinput').value;
+        let date1 = eventDate;
+        if (plan){
+            let event = {
+                date: date1, 
+                title: plan 
+            };
+            let storage = localStorage.getItem(key);
+            let EVENTS = [];
+            if(storage){
+                EVENTS = JSON.parse(storage);
+            }
+            EVENTS.push(event);
+            localStorage.setItem(key, JSON.stringify(EVENTS));
+            document.getElementById('calendarinput').value = '';
+        }
+    }
+    function loadToSpace(){
+        
+    }
     function initButtons() {
         document.getElementById('nextButton').addEventListener('click', () => {
             selectedMonth++;
